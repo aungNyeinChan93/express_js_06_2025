@@ -58,6 +58,9 @@ const postController = {
         } catch (error) {
             next(error)
         }
+    },
+    test() {
+        console.log('test');
     }
 }
 

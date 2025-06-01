@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJS - Home</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+    <h1 style="margin-left: 50px"><%= name %></h1>
+    <h2 style="text-align: center; color: greenyellow">All Posts</h2>
+    <ul>
+      <% posts?.forEach(function(item) { %>
+      <div
+        style="
+          border: 1px solid skyblue;
+          padding: 10px;
+          margin: 10px auto;
+          border-radius: 10px;
+        "
+      >
+        <h2 style="display: inline; font-family: monospace; color: red">
+          <%= item.id %>
+        </h2>
+        <h3 style="display: inline"><%= item.title %></h3>
+        <p><%= item.body %></p>
+        <h5>Tags</h5>
+        <ol>
+          <% item.tags?.forEach((t)=>{%>
+          <li><%= t %></li>
+          <% }) %>
+        </ol>
+      </div>
+
+      <% }); %>
+    </ul>
+  </body>
+</html>
